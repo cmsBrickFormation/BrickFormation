@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class BehaviorBrick : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    public float fallSpeed = 1;
+    private float fallTime = 0;
 
     void Update() {
         checkInput();
+        fallDown();
     }
 
     void checkInput() {
@@ -19,8 +18,15 @@ public class BehaviorBrick : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow)) rotate(90);
     }
 
+    void fallDown() {
+        if (Time.time - fallTime >= fallSpeed) {
+            this.gameObject.transform.position += new Vector3(0, -1, 0);
+            fallTime = Time.time;
+        }
+    }
+
     void move(float x) {
-        this.gameObject.transform.position += new Vector3(x, 0 , 0);
+        this.gameObject.transform.position += new Vector3(x, 0, 0);
     }
 
     void rotate(float z) {
