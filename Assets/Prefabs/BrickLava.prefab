@@ -230,6 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac201cc7cb45d3458edba997af0c0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRotationAllowed: 1
+  isRotationLimited: 1
+  moveVal: 1
+  rotateVal: 90
+  fallSpeed: 1
 --- !u!54 &5594881820865730371
 Rigidbody:
   m_ObjectHideFlags: 0
