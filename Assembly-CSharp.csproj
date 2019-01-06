@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BehaviorBrick.cs" />
     <Compile Include="Assets\Scripts\BehaviorGrid.cs" />
+    <Compile Include="Assets\Scripts\BrickInstantiater.cs" />
     <Compile Include="Assets\Scripts\Init.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtonControl.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlFH.cs" />
