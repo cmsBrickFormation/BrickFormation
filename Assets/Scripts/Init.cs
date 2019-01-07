@@ -13,6 +13,6 @@ public class Init : MonoBehaviour
     }
 
     private void initializePlayerPrefs() {
-
+        PlayerPrefs.SetString("mode", "");
     }
 }
