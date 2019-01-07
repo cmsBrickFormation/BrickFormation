@@ -11,26 +11,37 @@ public class BehaviorBrick : MonoBehaviour
     public float fallSpeed = 1;
     private float fallTime = 0;
 
+    void Start() {
+        if (PlayerPrefs.GetString("mode") == "arcade") {
+            Destroy(this.gameObject.GetComponent<Rigidbody>());
+        }
+    }
+
     void Update() {
         checkInput();
         fallDown();
     }
 
     void checkInput() {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && isValidMove(-moveVal, 0, 0)) move(-moveVal);
-        if (Input.GetKeyDown(KeyCode.RightArrow) && isValidMove(moveVal, 0, 0)) move(moveVal);
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && isValidMove(-moveVal, 0, 0)) move(-moveVal, 0);
+        if (Input.GetKeyDown(KeyCode.RightArrow) && isValidMove(moveVal, 0, 0)) move(moveVal, 0);
         if (isRotationAllowed && Input.GetKeyDown(KeyCode.UpArrow) && isValidMove(0, 0, rotateVal)) rotate(rotateVal);
     }
 
     void fallDown() {
-        if (Time.time - fallTime >= fallSpeed && isValidMove(0, -moveVal, 0)) {
-            this.gameObject.transform.position += new Vector3(0, -moveVal, 0);
-            fallTime = Time.time;
+        if (Time.time - fallTime >= fallSpeed) {
+            if (isValidMove(0, -moveVal, 0)) {
+                move(0, -moveVal);
+                fallTime = Time.time;
+            } else {
+                enabled = false;
+                FindObjectOfType<BrickInstantiater>().instantiateNextBrick();
+            }
         }
     }
 
-    void move(float x) {
-        this.gameObject.transform.position += new Vector3(x, 0, 0);
+    void move(float x, float y) {
+        this.gameObject.transform.position += new Vector3(x, y, 0);
     }
 
     void rotate(float z) {
