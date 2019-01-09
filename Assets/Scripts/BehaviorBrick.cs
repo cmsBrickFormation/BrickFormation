@@ -35,6 +35,7 @@ public class BehaviorBrick : MonoBehaviour
                 fallTime = Time.time;
             } else {
                 enabled = false;
+                FindObjectOfType<BehaviorGrid>().updateRows();
                 FindObjectOfType<BrickInstantiater>().instantiateNextBrick();
             }
         }
