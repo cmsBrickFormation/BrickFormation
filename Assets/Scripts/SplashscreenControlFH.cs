@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SplashscreenControlFH : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class SplashscreenControlFH : MonoBehaviour
     void Update() {
         moveLogo(logo);
         timer++;
-        if (timer > sceneDuration) SceneManager.LoadScene(nextScene);
+        if (timer > sceneDuration) FindObjectOfType<UtilitySceneManager>().loadScene(nextScene);
     }
 
     void moveLogo(GameObject logo) {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrickInstantiater : MonoBehaviour
+public class ArcadeBrickInstantiater : MonoBehaviour
 {
     public GameObject[] bricks;
 

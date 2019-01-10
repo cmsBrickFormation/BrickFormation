@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuButtonControl : MonoBehaviour
+public class ButtonControllerMainMenu : MonoBehaviour
 {
     public void quit() {
         Application.Quit();

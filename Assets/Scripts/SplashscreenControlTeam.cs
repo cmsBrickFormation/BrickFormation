@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SplashscreenControlTeam : MonoBehaviour
 {
@@ -11,15 +10,13 @@ public class SplashscreenControlTeam : MonoBehaviour
 
     private float timer = 0;
 
-    void Update()
-    {
+    void Update() {
         moveLogo(logo);
         timer++;
-        if (timer > sceneDuration) SceneManager.LoadScene(nextScene);
+        if (timer > sceneDuration) FindObjectOfType<UtilitySceneManager>().loadScene(nextScene);
     }
 
-    void moveLogo(GameObject logo)
-    {
+    void moveLogo(GameObject logo) {
         if (timer < 140) logo.GetComponent<RectTransform>().anchoredPosition = new Vector2(logo.GetComponent<RectTransform>().anchoredPosition.x, logo.GetComponent<RectTransform>().anchoredPosition.y - 5);
     }
 }
