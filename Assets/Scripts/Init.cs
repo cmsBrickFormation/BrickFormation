@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Init : MonoBehaviour
 {
@@ -9,10 +8,11 @@ public class Init : MonoBehaviour
 
     void Awake() {
         initializePlayerPrefs();
-        SceneManager.LoadScene(nextScene);
+        FindObjectOfType<UtilitySceneManager>().loadScene(nextScene);
     }
 
     private void initializePlayerPrefs() {
         PlayerPrefs.SetString("mode", "");
+        PlayerPrefs.SetInt("gameover", 0);
     }
 }

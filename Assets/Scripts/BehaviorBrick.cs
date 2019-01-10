@@ -36,7 +36,8 @@ public class BehaviorBrick : MonoBehaviour
             } else {
                 enabled = false;
                 FindObjectOfType<BehaviorGrid>().updateRows();
-                FindObjectOfType<BrickInstantiater>().instantiateNextBrick();
+                FindObjectOfType<BehaviorGrid>().checkGameOver(this.gameObject);
+                FindObjectOfType<ArcadeBrickInstantiater>().instantiateNextBrick();
             }
         }
     }

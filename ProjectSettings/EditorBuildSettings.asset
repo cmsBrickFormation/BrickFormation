@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 3f276554f7e67264f9842783bd440280
+  - enabled: 1
+    path: Assets/Scenes/ModeArcade.unity
+    guid: 69b365a0ba218bb4a87b09b6de64ba4c
+  - enabled: 1
+    path: Assets/Scenes/ModeTower.unity
+    guid: d1ea9b2e5eb824b4b86856ff9d907cb8
+  - enabled: 1
+    path: Assets/Scenes/GameOverView.unity
+    guid: 2b320b31ae8fc6b42abd6a6c98f22fbd
   m_configObjects: {}

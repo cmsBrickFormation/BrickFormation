@@ -19,9 +19,9 @@ public class BehaviorGrid : MonoBehaviour
             for (int x = 0; x < gridWidth; x++)                                     // and every column
                 if (grid[x, y] != null && grid[x, y].parent == brick.transform)     // check if there is a brick
                     grid[x, y] = null;                                              // act like it's not there
-        foreach (Transform b in brick.transform) {
-            Vector2 pos = new Vector2(Mathf.Round(b.position.x), Mathf.Round(b.position.y));
-            if (pos.y < gridHeight) grid[(int)pos.x, (int)pos.y] = b;               // place a brick into the grid
+        foreach (Transform cube in brick.transform) {
+            Vector2 pos = new Vector2(Mathf.Round(cube.position.x), Mathf.Round(cube.position.y));
+            if (pos.y < gridHeight) grid[(int)pos.x, (int)pos.y] = cube;               // place a brick into the grid
         }
     }
 
@@ -64,6 +64,19 @@ public class BehaviorGrid : MonoBehaviour
                 grid[x, y - 1] = grid[x, y];
                 grid[x, y] = null;
                 grid[x, y - 1].position += new Vector3(0, -1, 0);
+            }
+        }
+    }
+
+    // check the highest row for cubes
+    public void checkGameOver(GameObject brick) {
+        for (int x = 0; x < gridWidth; x++) {
+            foreach (Transform cube in brick.transform) {
+                Vector2 pos = new Vector2((int)Mathf.Round(cube.position.x), (int)Mathf.Round(cube.position.y));
+                if (pos.y > gridHeight - 1) {
+                    PlayerPrefs.SetInt("gameover", 1);
+                    break;
+                }
             }
         }
     }
