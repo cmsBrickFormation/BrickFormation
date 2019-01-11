@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ModeArcade.unity
+- path: Assets/Scenes/SplashscreenTeam.unity
   isLoaded: 1
   isActive: 1
