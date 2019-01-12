@@ -18,6 +18,13 @@ public class ArcadeGridP3 : MonoBehaviour
         instantiateNextBrick();
     }
 
+    void Update() {
+        if (isGameOver)
+            for (int y = 0; y < gridP3Height; y++)
+                for (int x = 0; x < gridP3Width; x++)
+                    if (gridP3[x, y] != null) gridP3[x, y].gameObject.GetComponent<MeshRenderer>().material = player.GetComponent<PlayerInit>().charMaterial;
+    }
+
     // check if a brick is within the grid's boundaries
     public bool isInsideGrid(Vector2 pos) {
         return ((int)pos.x >= 0 && (int)pos.x < gridP3Width && (int)pos.y >= 0);

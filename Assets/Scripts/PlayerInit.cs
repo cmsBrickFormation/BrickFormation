@@ -8,6 +8,7 @@ public class PlayerInit : MonoBehaviour
     public GameObject playerCam, playerChar, playerGrid;
     public GameObject[] chars;
     public Material[] charMaterials;
+    public Material charMaterial;
 
     private void Awake() {
         // disable current object if not needed
@@ -27,7 +28,8 @@ public class PlayerInit : MonoBehaviour
 
         // set the correct grid color
         Transform[] gridCubes = playerGrid.gameObject.GetComponentsInChildren<Transform>();
-        for (int i = 1; i < gridCubes.Length; i++) gridCubes[i].gameObject.GetComponent<MeshRenderer>().material = charMaterials[PlayerPrefs.GetInt("charp" + playerNumber)];
+        charMaterial = charMaterials[PlayerPrefs.GetInt("charp" + playerNumber)];
+        for (int i = 1; i < gridCubes.Length; i++) gridCubes[i].gameObject.GetComponent<MeshRenderer>().material = charMaterial;
     }
 
     private void setCam(int playerCount, int playerNum, GameObject cam) {

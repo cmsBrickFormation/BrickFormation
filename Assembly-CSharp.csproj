@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\ButtonControllerGameOver.cs" />
     <Compile Include="Assets\Scripts\ButtonControllerMainMenu.cs" />
     <Compile Include="Assets\Scripts\Init.cs" />
+    <Compile Include="Assets\Scripts\PlayerCharController.cs" />
     <Compile Include="Assets\Scripts\PlayerInit.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlFH.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlTeam.cs" />
