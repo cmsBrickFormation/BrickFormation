@@ -37,7 +37,7 @@ public class ArcadeBrickP2 : MonoBehaviour
                 FindObjectOfType<ArcadeGridP2>().updateRows();
                 FindObjectOfType<ArcadeGridP2>().checkGameOver(this.gameObject);
                 if (!FindObjectOfType<ArcadeGridP2>().isGameOver) FindObjectOfType<ArcadeGridP2>().instantiateNextBrick();
-                else PlayerPrefs.SetInt("gameover", PlayerPrefs.GetInt("gameover") + 1);
+                else Destroy(this.gameObject);
             }
         }
     }
