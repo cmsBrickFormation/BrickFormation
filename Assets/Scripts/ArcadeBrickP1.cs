@@ -22,9 +22,9 @@ public class ArcadeBrickP1 : MonoBehaviour
     }
 
     void checkInput() {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && isValidMove(-moveVal, 0, 0)) move(-moveVal, 0);
-        if (Input.GetKeyDown(KeyCode.RightArrow) && isValidMove(moveVal, 0, 0)) move(moveVal, 0);
-        if (isRotationAllowed && Input.GetKeyDown(KeyCode.UpArrow) && isValidMove(0, 0, rotateVal)) rotate(rotateVal, true);
+        if (Input.GetKeyDown(KeyCode.A) && isValidMove(-moveVal, 0, 0)) move(-moveVal, 0);
+        if (Input.GetKeyDown(KeyCode.D) && isValidMove(moveVal, 0, 0)) move(moveVal, 0);
+        if (isRotationAllowed && Input.GetKeyDown(KeyCode.W) && isValidMove(0, 0, rotateVal)) rotate(rotateVal, true);
     }
 
     void fallDown() {
