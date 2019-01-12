@@ -7,11 +7,14 @@ public class ButtonControllerGameOver : MonoBehaviour
     public string sceneNamePlayAgain = "ModeArcade";
     public string sceneNameBackToMenu = "MainMenu";
 
-    public void playAgain() {
-        FindObjectOfType<UtilitySceneManager>().loadScene(sceneNamePlayAgain);
-    }
+    public void playAgain() => FindObjectOfType<UtilitySceneManager>().loadScene(sceneNamePlayAgain);
 
     public void backToMenu() {
+        PlayerPrefs.SetInt("playercount", 0);
+        PlayerPrefs.SetInt("charp1", 99);
+        PlayerPrefs.SetInt("charp2", 99);
+        PlayerPrefs.SetInt("charp3", 99);
+        PlayerPrefs.SetInt("charp4", 99);
         FindObjectOfType<UtilitySceneManager>().loadScene(sceneNameBackToMenu);
     }
 }

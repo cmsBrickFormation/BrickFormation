@@ -14,5 +14,12 @@ public class Init : MonoBehaviour
     private void initializePlayerPrefs() {
         PlayerPrefs.SetString("mode", "");
         PlayerPrefs.SetInt("gameover", 0);
+        PlayerPrefs.SetInt("cancelselect", 0);
+        PlayerPrefs.SetInt("playercount", 0);
+        PlayerPrefs.SetInt("charp1", 99);
+        PlayerPrefs.SetInt("charp2", 99);
+        PlayerPrefs.SetInt("charp3", 99);
+        PlayerPrefs.SetInt("charp4", 99);
+        PlayerPrefs.SetInt("playerready", 0);
     }
 }
