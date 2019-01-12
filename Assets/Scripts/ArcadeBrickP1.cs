@@ -36,7 +36,8 @@ public class ArcadeBrickP1 : MonoBehaviour
                 enabled = false;
                 FindObjectOfType<ArcadeGridP1>().updateRows();
                 FindObjectOfType<ArcadeGridP1>().checkGameOver(this.gameObject);
-                FindObjectOfType<ArcadeGridP1>().instantiateNextBrick();
+                if (!FindObjectOfType<ArcadeGridP1>().isGameOver) FindObjectOfType<ArcadeGridP1>().instantiateNextBrick();
+                else PlayerPrefs.SetInt("gameover", PlayerPrefs.GetInt("gameover") + 1);
             }
         }
     }
@@ -54,7 +55,6 @@ public class ArcadeBrickP1 : MonoBehaviour
 
     bool isValidMove(int moveX, int moveY, int rotateZ) {
         bool isValid = true;
-        GameObject touchedObject = new GameObject();
         Quaternion currentRotation = this.gameObject.transform.rotation;                                                                            // save current rotation
         rotate(rotateZ, false);                                                                                                                     // rotate the brick into its next form
         foreach (Transform cube in this.gameObject.transform) {
