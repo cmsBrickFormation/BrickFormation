@@ -8,7 +8,7 @@ public class ArcadeBrickP1 : MonoBehaviour
     public bool isRotationLimited = false;
     public int moveVal = 1;
     public int rotateVal = 90;
-    public float fallSpeed = 1;
+    private float fallSpeed = 1;
     private float fallTime = 0;
 
     void Awake() {
@@ -19,6 +19,7 @@ public class ArcadeBrickP1 : MonoBehaviour
     void Update() {
         checkInput();
         fallDown();
+        updateFallSpeed();
     }
 
     void checkInput() {
@@ -36,10 +37,17 @@ public class ArcadeBrickP1 : MonoBehaviour
                 enabled = false;
                 FindObjectOfType<ArcadeGridP1>().updateRows();
                 FindObjectOfType<ArcadeGridP1>().checkGameOver(this.gameObject);
-                if (!FindObjectOfType<ArcadeGridP1>().isGameOver) FindObjectOfType<ArcadeGridP1>().instantiateNextBrick();
+                if (!FindObjectOfType<ArcadeGridP1>().isGameOver) {
+                    PlayerPrefs.SetInt("scorep1", PlayerPrefs.GetInt("scorep1") + 10);
+                    FindObjectOfType<ArcadeGridP1>().instantiateNextBrick();
+                }
                 else Destroy(this.gameObject);
             }
         }
+    }
+
+    void updateFallSpeed() {
+        fallSpeed = FindObjectOfType<UtilityFallSpeedManager>().fallSpeed;
     }
 
     void move(int x, int y) {

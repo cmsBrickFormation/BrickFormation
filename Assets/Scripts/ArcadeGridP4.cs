@@ -32,13 +32,13 @@ public class ArcadeGridP4 : MonoBehaviour
 
     // update the grid's bricks: new bricks are always resetted until they land --> become part of the grid
     public void updateGrid(GameObject brick) {
-        for (int y = 0; y < gridP4Height; y++)                                        // check every row                                    
-            for (int x = 0; x < gridP4Width; x++)                                     // and every column
+        for (int y = 0; y < gridP4Height; y++)                                          // check every row                                    
+            for (int x = 0; x < gridP4Width; x++)                                       // and every column
                 if (gridP4[x, y] != null && gridP4[x, y].parent == brick.transform)     // check if there is a brick
-                    gridP4[x, y] = null;                                              // act like it's not there
+                    gridP4[x, y] = null;                                                // act like it's not there
         foreach (Transform cube in brick.transform) {
             Vector2 pos = new Vector2(Mathf.Round(cube.position.x), Mathf.Round(cube.position.y));
-            if (pos.y < gridP4Height) gridP4[(int)pos.x, (int)pos.y] = cube;               // place a brick into the grid
+            if (pos.y < gridP4Height) gridP4[(int)pos.x, (int)pos.y] = cube;            // place a brick into the grid
         }
     }
 
@@ -52,6 +52,7 @@ public class ArcadeGridP4 : MonoBehaviour
     public void updateRows() {
         for (int y = 0; y < gridP4Height; y++) {
             if (isRowFullAtY(y)) {
+                PlayerPrefs.SetInt("scorep4", PlayerPrefs.GetInt("scorep4") + 50 * y);   // give points: the higher the row was, the more points it is worth
                 deleteRowAtY(y);
                 moveRowsDown(y + 1);
                 y--;
