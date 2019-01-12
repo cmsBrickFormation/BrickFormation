@@ -21,5 +21,9 @@ public class Init : MonoBehaviour
         PlayerPrefs.SetInt("charp3", 99);
         PlayerPrefs.SetInt("charp4", 99);
         PlayerPrefs.SetInt("playerready", 0);
+        PlayerPrefs.SetInt("scorep1", 0);
+        PlayerPrefs.SetInt("scorep2", 0);
+        PlayerPrefs.SetInt("scorep3", 0);
+        PlayerPrefs.SetInt("scorep4", 0);
     }
 }

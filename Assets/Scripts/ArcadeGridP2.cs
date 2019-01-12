@@ -52,6 +52,7 @@ public class ArcadeGridP2 : MonoBehaviour
     public void updateRows() {
         for (int y = 0; y < gridP2Height; y++) {
             if (isRowFullAtY(y)) {
+                PlayerPrefs.SetInt("scorep2", PlayerPrefs.GetInt("scorep2") + 50 * y);   // give points: the higher the row was, the more points it is worth
                 deleteRowAtY(y);
                 moveRowsDown(y + 1);
                 y--;

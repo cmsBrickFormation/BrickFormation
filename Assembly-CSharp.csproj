@@ -75,11 +75,14 @@
     <Compile Include="Assets\Scripts\Init.cs" />
     <Compile Include="Assets\Scripts\PlayerCharController.cs" />
     <Compile Include="Assets\Scripts\PlayerInit.cs" />
+    <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlFH.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlTeam.cs" />
     <Compile Include="Assets\Scripts\TowerBrick.cs" />
     <Compile Include="Assets\Scripts\TowerPlatform.cs" />
     <Compile Include="Assets\Scripts\UtilityCharWindowActivator.cs" />
+    <Compile Include="Assets\Scripts\UtilityFallSpeedManager.cs" />
+    <Compile Include="Assets\Scripts\UtilityGameOverController.cs" />
     <Compile Include="Assets\Scripts\UtilityGameOverObserver.cs" />
     <Compile Include="Assets\Scripts\UtilityPlayerActivator.cs" />
     <Compile Include="Assets\Scripts\UtilityPlayerIdentifier.cs" />
