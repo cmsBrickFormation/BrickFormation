@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\UtilityPlayerActivator.cs" />
     <Compile Include="Assets\Scripts\UtilityPlayerIdentifier.cs" />
     <Compile Include="Assets\Scripts\UtilityReadyChecker.cs" />
+    <Compile Include="Assets\Scripts\UtilityRNG.cs" />
     <Compile Include="Assets\Scripts\UtilitySceneManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Lloyd Hohenheim/Documents/unity-projects/BrickFormation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

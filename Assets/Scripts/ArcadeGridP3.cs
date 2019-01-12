@@ -9,8 +9,13 @@ public class ArcadeGridP3 : MonoBehaviour
     public static Transform[,] gridP3 = new Transform[gridP3Width, gridP3Height];
     public GameObject[] bricks;
     public GameObject player;
+    private int[] rng;
+    private int rngIndex = 0;
 
-    void Start() => instantiateNextBrick();
+    void Start() {
+        rng = FindObjectOfType<UtilityRNG>().randomNumbers.ToArray();
+        instantiateNextBrick();
+    }
 
     // check if a brick is within the grid's boundaries
     public bool isInsideGrid(Vector2 pos) {
@@ -86,7 +91,9 @@ public class ArcadeGridP3 : MonoBehaviour
     }
 
     public void instantiateNextBrick() {
-        GameObject nextBrick = (GameObject)Instantiate(bricks[Random.Range(0, bricks.Length)], player.transform);
+        int random = rng[rngIndex];
+        GameObject nextBrick = (GameObject)Instantiate(bricks[random], player.transform);
         nextBrick.transform.position += new Vector3(5, 20, 0);
+        if (rngIndex == 63) rngIndex = 0; else rngIndex++;
     }
 }
