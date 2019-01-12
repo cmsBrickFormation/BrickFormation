@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class ArcadeInit : MonoBehaviour
 {
-    void Start() {
-        PlayerPrefs.SetString("mode", "ModeArcade");
-        PlayerPrefs.SetInt("gameover", 0);
-    }
+    void Start() => PlayerPrefs.SetInt("gameover", 0);
 }

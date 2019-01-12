@@ -9,6 +9,7 @@ public class ArcadeGridP4 : MonoBehaviour
     public static Transform[,] gridP4 = new Transform[gridP4Width, gridP4Height];
     public GameObject[] bricks;
     public GameObject player;
+    public bool isGameOver = false;
     private int[] rng;
     private int rngIndex = 0;
 
@@ -83,7 +84,7 @@ public class ArcadeGridP4 : MonoBehaviour
             foreach (Transform cube in brick.transform) {
                 Vector2 pos = new Vector2((int)Mathf.Round(cube.position.x), (int)Mathf.Round(cube.position.y));
                 if (pos.y > gridP4Height - 1) {
-                    PlayerPrefs.SetInt("gameover", 1);
+                    isGameOver = true;
                     break;
                 }
             }
