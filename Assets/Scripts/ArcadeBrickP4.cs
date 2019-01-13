@@ -39,6 +39,7 @@ public class ArcadeBrickP4 : MonoBehaviour
                 FindObjectOfType<ArcadeGridP4>().checkGameOver(this.gameObject);
                 if (!FindObjectOfType<ArcadeGridP4>().isGameOver) {
                     PlayerPrefs.SetInt("scorep4", PlayerPrefs.GetInt("scorep4") + 10);
+                    PlayerPrefs.SetInt("brickcountp4", PlayerPrefs.GetInt("brickcountp4") + 1);
                     FindObjectOfType<ArcadeGridP4>().instantiateNextBrick();
                 }
                 else Destroy(this.gameObject);

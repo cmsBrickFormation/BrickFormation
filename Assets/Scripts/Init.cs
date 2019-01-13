@@ -25,5 +25,9 @@ public class Init : MonoBehaviour
         PlayerPrefs.SetInt("scorep2", 0);
         PlayerPrefs.SetInt("scorep3", 0);
         PlayerPrefs.SetInt("scorep4", 0);
+        PlayerPrefs.SetInt("brickcountp1", 0);
+        PlayerPrefs.SetInt("brickcountp2", 0);
+        PlayerPrefs.SetInt("brickcountp3", 0);
+        PlayerPrefs.SetInt("brickcountp4", 0);
     }
 }
