@@ -5,8 +5,8 @@ using UnityEngine;
 public class UtilityFallSpeedManager : MonoBehaviour
 {
     public float fallSpeed = 1;
-    public float minSpeed = 0.3f;
-    public int increaseTime = 1024;
+    public float minSpeed = 0.25f;
+    public int increaseTime = 1000;
     private int timer = 0;
 
     void Update() {

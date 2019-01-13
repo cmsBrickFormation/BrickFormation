@@ -282,8 +282,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4206140308307747183}
-  - component: {fileID: 2596578371199124494}
   - component: {fileID: 8781565395779170273}
+  - component: {fileID: 3352057396198526365}
+  - component: {fileID: 3255995957567252345}
+  - component: {fileID: 1753840784142210827}
+  - component: {fileID: 4937808969537436913}
   m_Layer: 0
   m_Name: TowerBrickTurquoise
   m_TagString: Untagged
@@ -309,23 +312,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2596578371199124494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5746924549624886302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f781e9131eed3be42a7db95ebe4541f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRotationAllowed: 1
-  isRotationLimited: 0
-  moveVal: 1
-  rotateVal: 90
-  fallSpeed: 1
 --- !u!54 &8781565395779170273
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -342,6 +328,70 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3352057396198526365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746924549624886302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fac770f7bc4d041bfbc4f4cf52bb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 1
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
+--- !u!114 &3255995957567252345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746924549624886302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fd41901e3f10e47a2dde5aaa71a585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 1
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
+--- !u!114 &1753840784142210827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746924549624886302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e11806dd6cbac4d90ba012d6f64aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 1
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
+--- !u!114 &4937808969537436913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746924549624886302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046803dd7c2821a4187691e22ce0efae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 1
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
 --- !u!1 &6102330396008545711
 GameObject:
   m_ObjectHideFlags: 0
