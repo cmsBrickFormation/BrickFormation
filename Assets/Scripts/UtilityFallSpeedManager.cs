@@ -15,7 +15,7 @@ public class UtilityFallSpeedManager : MonoBehaviour
                 fallSpeed -= 0.025f;
                 timer = 0;
             }
-            else Destroy(this);
+            else enabled = false;
         }
         timer++;
     }

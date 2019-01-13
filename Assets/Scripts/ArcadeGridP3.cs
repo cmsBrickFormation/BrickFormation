@@ -19,10 +19,13 @@ public class ArcadeGridP3 : MonoBehaviour
     }
 
     void Update() {
-        if (isGameOver)
+        if (isGameOver) {
             for (int y = 0; y < gridP3Height; y++)
                 for (int x = 0; x < gridP3Width; x++)
                     if (gridP3[x, y] != null) gridP3[x, y].gameObject.GetComponent<MeshRenderer>().material = player.GetComponent<PlayerInit>().charMaterial;
+            Destroy(FindObjectOfType<UtilityBrickPreviewP3>().gameObject);
+            enabled = false;
+        }
     }
 
     // check if a brick is within the grid's boundaries
@@ -34,7 +37,7 @@ public class ArcadeGridP3 : MonoBehaviour
     public void updateGrid(GameObject brick) {
         for (int y = 0; y < gridP3Height; y++)                                        // check every row                                    
             for (int x = 0; x < gridP3Width; x++)                                     // and every column
-                if (gridP3[x, y] != null && gridP3[x, y].parent == brick.transform)     // check if there is a brick
+                if (gridP3[x, y] != null && gridP3[x, y].parent == brick.transform)   // check if there is a brick
                     gridP3[x, y] = null;                                              // act like it's not there
         foreach (Transform cube in brick.transform) {
             Vector2 pos = new Vector2(Mathf.Round(cube.position.x), Mathf.Round(cube.position.y));
@@ -104,5 +107,6 @@ public class ArcadeGridP3 : MonoBehaviour
         GameObject nextBrick = (GameObject)Instantiate(bricks[random], player.transform);
         nextBrick.transform.position += new Vector3(5, 20, 0);
         if (rngIndex == 63) rngIndex = 0; else rngIndex++;
+        FindObjectOfType<UtilityBrickPreviewP3>().updateBrickPreview(rngIndex);
     }
 }

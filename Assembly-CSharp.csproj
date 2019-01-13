@@ -80,6 +80,10 @@
     <Compile Include="Assets\Scripts\SplashscreenControlTeam.cs" />
     <Compile Include="Assets\Scripts\TowerBrick.cs" />
     <Compile Include="Assets\Scripts\TowerPlatform.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP1.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP2.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP3.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP4.cs" />
     <Compile Include="Assets\Scripts\UtilityCharWindowActivator.cs" />
     <Compile Include="Assets\Scripts\UtilityFallSpeedManager.cs" />
     <Compile Include="Assets\Scripts\UtilityGameOverController.cs" />

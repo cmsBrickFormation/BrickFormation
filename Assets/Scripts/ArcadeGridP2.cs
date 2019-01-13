@@ -19,10 +19,13 @@ public class ArcadeGridP2 : MonoBehaviour
     }
 
     void Update() {
-        if (isGameOver)
+        if (isGameOver) {
             for (int y = 0; y < gridP2Height; y++)
                 for (int x = 0; x < gridP2Width; x++)
                     if (gridP2[x, y] != null) gridP2[x, y].gameObject.GetComponent<MeshRenderer>().material = player.GetComponent<PlayerInit>().charMaterial;
+            Destroy(FindObjectOfType<UtilityBrickPreviewP2>().gameObject);
+            enabled = false;
+        }
     }
 
     // check if a brick is within the grid's boundaries
@@ -104,5 +107,6 @@ public class ArcadeGridP2 : MonoBehaviour
         GameObject nextBrick = (GameObject)Instantiate(bricks[random], player.transform);
         nextBrick.transform.position += new Vector3(5, 20, 0);
         if (rngIndex == 63) rngIndex = 0; else rngIndex++;
+        FindObjectOfType<UtilityBrickPreviewP2>().updateBrickPreview(rngIndex);
     }
 }
