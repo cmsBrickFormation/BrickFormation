@@ -9,8 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6406741078701783118}
-  - component: {fileID: 6710145222369150899}
   - component: {fileID: 4618297582772992013}
+  - component: {fileID: 7781297367065675094}
+  - component: {fileID: 2299378965152069473}
+  - component: {fileID: 7722440974976442480}
+  - component: {fileID: 4609038880785648870}
   m_Layer: 0
   m_Name: TowerBrickWhite
   m_TagString: Untagged
@@ -33,23 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6710145222369150899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661635284049647723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f781e9131eed3be42a7db95ebe4541f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRotationAllowed: 0
-  isRotationLimited: 0
-  moveVal: 1
-  rotateVal: 90
-  fallSpeed: 1
 --- !u!54 &4618297582772992013
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -66,6 +52,70 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7781297367065675094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661635284049647723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fac770f7bc4d041bfbc4f4cf52bb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 0
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
+--- !u!114 &2299378965152069473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661635284049647723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fd41901e3f10e47a2dde5aaa71a585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 0
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
+--- !u!114 &7722440974976442480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661635284049647723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e11806dd6cbac4d90ba012d6f64aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 0
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
+--- !u!114 &4609038880785648870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661635284049647723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046803dd7c2821a4187691e22ce0efae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRotationAllowed: 0
+  isRotationLimited: 0
+  moveVal: 1
+  rotateVal: 90
 --- !u!1 &9118952512994693829
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharController : MonoBehaviour
+public class ArcadePlayerCharController : MonoBehaviour
 {
     public int playerNum;
 

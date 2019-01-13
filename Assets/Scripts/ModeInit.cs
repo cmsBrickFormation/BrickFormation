@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcadeInit : MonoBehaviour
+public class ModeInit : MonoBehaviour
 {
     void Start() => PlayerPrefs.SetInt("gameover", 0);
 }
