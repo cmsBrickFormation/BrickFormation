@@ -5,43 +5,63 @@ using UnityEngine.UI;
 
 public class UtilityGameOverController : MonoBehaviour
 {
-    public GameObject scoreTextP1;
-    public GameObject scoreTextP2;
-    public GameObject scoreTextP3;
-    public GameObject scoreTextP4;
+    public GameObject scoreTextP1, scoreTextP2, scoreTextP3, scoreTextP4;
+    public GameObject brickCountTextP1, brickCountTextP2, brickCountTextP3, brickCountTextP4;
     public GameObject highScoreText;
     public GameObject highScoreIndicator;
     private bool isNewHighScore = false;
+    private bool isNewHighCount = false;
 
     void Awake() {
         if (PlayerPrefs.GetInt("playercount") == 1) {
             scoreTextP1.gameObject.GetComponent<Text>().text = "P1 - " + PlayerPrefs.GetInt("scorep1");
+            brickCountTextP1.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp1");
             scoreTextP2.SetActive(false);
+            brickCountTextP2.SetActive(false);
             scoreTextP3.SetActive(false);
+            brickCountTextP3.SetActive(false);
             scoreTextP4.SetActive(false);
+            brickCountTextP4.SetActive(false);
         } else if (PlayerPrefs.GetInt("playercount") == 2) {
             scoreTextP1.gameObject.GetComponent<Text>().text = "P1 - " + PlayerPrefs.GetInt("scorep1");
+            brickCountTextP1.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp1");
             scoreTextP2.gameObject.GetComponent<Text>().text = "P2 - " + PlayerPrefs.GetInt("scorep2");
+            brickCountTextP2.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp2");
             scoreTextP3.SetActive(false);
+            brickCountTextP3.SetActive(false);
             scoreTextP4.SetActive(false);
+            brickCountTextP4.SetActive(false);
         } else if (PlayerPrefs.GetInt("playercount") == 3) {
             scoreTextP1.gameObject.GetComponent<Text>().text = "P1 - " + PlayerPrefs.GetInt("scorep1");
+            brickCountTextP1.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp1");
             scoreTextP2.gameObject.GetComponent<Text>().text = "P2 - " + PlayerPrefs.GetInt("scorep2");
+            brickCountTextP2.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp2");
             scoreTextP3.gameObject.GetComponent<Text>().text = "P3 - " + PlayerPrefs.GetInt("scorep3");
+            brickCountTextP3.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp3");
             scoreTextP4.SetActive(false);
-        } else if (PlayerPrefs.GetInt("playercount") == 4) {
+            brickCountTextP4.SetActive(false);
+        }
+        else if (PlayerPrefs.GetInt("playercount") == 4) {
             scoreTextP1.gameObject.GetComponent<Text>().text = "P1 - " + PlayerPrefs.GetInt("scorep1");
+            brickCountTextP1.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp1");
             scoreTextP2.gameObject.GetComponent<Text>().text = "P2 - " + PlayerPrefs.GetInt("scorep2");
+            brickCountTextP2.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp2");
             scoreTextP3.gameObject.GetComponent<Text>().text = "P3 - " + PlayerPrefs.GetInt("scorep3");
+            brickCountTextP3.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp3");
             scoreTextP4.gameObject.GetComponent<Text>().text = "P4 - " + PlayerPrefs.GetInt("scorep4");
+            brickCountTextP4.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp4");
         }
         if (PlayerPrefs.GetInt("scorep1") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep1"));
         if (PlayerPrefs.GetInt("scorep2") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep2"));
         if (PlayerPrefs.GetInt("scorep3") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep3"));
         if (PlayerPrefs.GetInt("scorep4") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep4"));
+        if (PlayerPrefs.GetInt("brickcountp1") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp1"));
+        if (PlayerPrefs.GetInt("brickcountp2") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp2"));
+        if (PlayerPrefs.GetInt("brickcountp3") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp3"));
+        if (PlayerPrefs.GetInt("brickcountp4") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp4"));
 
-        highScoreText.gameObject.GetComponent<Text>().text = "High-Score: " + PlayerPrefs.GetInt("highscore");
-        if (!isNewHighScore) highScoreIndicator.SetActive(false);
+        highScoreText.gameObject.GetComponent<Text>().text = "High-Score: " + PlayerPrefs.GetInt("highscore") + "  -  " + PlayerPrefs.GetInt("highcount");
+        if (!isNewHighScore || !isNewHighCount) highScoreIndicator.SetActive(false);
     }
 
     void Start() {
@@ -49,10 +69,19 @@ public class UtilityGameOverController : MonoBehaviour
         PlayerPrefs.SetInt("scorep2", 0);
         PlayerPrefs.SetInt("scorep3", 0);
         PlayerPrefs.SetInt("scorep4", 0);
+        PlayerPrefs.SetInt("brickcountp1", 0);
+        PlayerPrefs.SetInt("brickcountp2", 0);
+        PlayerPrefs.SetInt("brickcountp3", 0);
+        PlayerPrefs.SetInt("brickcountp4", 0);
     }
 
     void setNewHighScore(int newScore) {
         isNewHighScore = true;
         PlayerPrefs.SetInt("highscore", newScore);
+    }
+
+    void setNewHighCount(int newhighCount) {
+        isNewHighCount = true;
+        PlayerPrefs.SetInt("highcount", newhighCount);
     }
 }
