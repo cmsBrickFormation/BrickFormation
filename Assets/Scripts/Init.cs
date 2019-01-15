@@ -29,5 +29,14 @@ public class Init : MonoBehaviour
         PlayerPrefs.SetInt("brickcountp2", 0);
         PlayerPrefs.SetInt("brickcountp3", 0);
         PlayerPrefs.SetInt("brickcountp4", 0);
+        PlayerPrefs.SetInt("winnerp1", 0);
+        PlayerPrefs.SetInt("winnerp2", 0);
+        PlayerPrefs.SetInt("winnerp3", 0);
+        PlayerPrefs.SetInt("winnerp4", 0);
+        PlayerPrefs.SetInt("defaultlivesnumber", 25);
+        PlayerPrefs.SetFloat("livesp1", PlayerPrefs.GetInt("defaultlivesnumber"));
+        PlayerPrefs.SetFloat("livesp2", PlayerPrefs.GetInt("defaultlivesnumber"));
+        PlayerPrefs.SetFloat("livesp3", PlayerPrefs.GetInt("defaultlivesnumber"));
+        PlayerPrefs.SetFloat("livesp4", PlayerPrefs.GetInt("defaultlivesnumber"));
     }
 }

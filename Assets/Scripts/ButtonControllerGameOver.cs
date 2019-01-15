@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ButtonControllerGameOver : MonoBehaviour
 {
-    public string sceneNamePlayAgain = "ModeArcade";
     public string sceneNameBackToMenu = "MainMenu";
 
-    public void playAgain() => FindObjectOfType<UtilitySceneManager>().loadScene(sceneNamePlayAgain);
+    public void playAgain() => FindObjectOfType<UtilitySceneManager>().loadScene(PlayerPrefs.GetString("mode"));
 
     public void backToMenu() {
         PlayerPrefs.SetInt("playercount", 0);

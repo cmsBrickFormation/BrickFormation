@@ -72,7 +72,9 @@
     <Compile Include="Assets\Scripts\ButtonControllerCharWindow.cs" />
     <Compile Include="Assets\Scripts\ButtonControllerGameOver.cs" />
     <Compile Include="Assets\Scripts\ButtonControllerMainMenu.cs" />
+    <Compile Include="Assets\Scripts\GoalController.cs" />
     <Compile Include="Assets\Scripts\Init.cs" />
+    <Compile Include="Assets\Scripts\LivesController.cs" />
     <Compile Include="Assets\Scripts\ModeInit.cs" />
     <Compile Include="Assets\Scripts\PlayerInit.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Assets\Scripts\TowerPlatformP3.cs" />
     <Compile Include="Assets\Scripts\TowerPlatformP4.cs" />
     <Compile Include="Assets\Scripts\TowerPlayerCharController.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickCatcher.cs" />
     <Compile Include="Assets\Scripts\UtilityBrickPreviewP1.cs" />
     <Compile Include="Assets\Scripts\UtilityBrickPreviewP2.cs" />
     <Compile Include="Assets\Scripts\UtilityBrickPreviewP3.cs" />

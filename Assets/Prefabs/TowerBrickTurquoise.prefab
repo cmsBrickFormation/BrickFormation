@@ -327,7 +327,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &3352057396198526365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +344,7 @@ MonoBehaviour:
   isRotationLimited: 0
   moveVal: 1
   rotateVal: 90
+  released: 0
 --- !u!114 &3255995957567252345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +361,7 @@ MonoBehaviour:
   isRotationLimited: 0
   moveVal: 1
   rotateVal: 90
+  released: 0
 --- !u!114 &1753840784142210827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +378,7 @@ MonoBehaviour:
   isRotationLimited: 0
   moveVal: 1
   rotateVal: 90
+  released: 0
 --- !u!114 &4937808969537436913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +395,7 @@ MonoBehaviour:
   isRotationLimited: 0
   moveVal: 1
   rotateVal: 90
+  released: 0
 --- !u!1 &6102330396008545711
 GameObject:
   m_ObjectHideFlags: 0
