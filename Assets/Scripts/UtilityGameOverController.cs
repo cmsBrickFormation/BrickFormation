@@ -51,16 +51,30 @@ public class UtilityGameOverController : MonoBehaviour
             scoreTextP4.gameObject.GetComponent<Text>().text = "P4 - " + PlayerPrefs.GetInt("scorep4");
             brickCountTextP4.gameObject.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("brickcountp4");
         }
-        if (PlayerPrefs.GetInt("scorep1") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep1"));
-        if (PlayerPrefs.GetInt("scorep2") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep2"));
-        if (PlayerPrefs.GetInt("scorep3") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep3"));
-        if (PlayerPrefs.GetInt("scorep4") > PlayerPrefs.GetInt("highscore")) setNewHighScore(PlayerPrefs.GetInt("scorep4"));
-        if (PlayerPrefs.GetInt("brickcountp1") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp1"));
-        if (PlayerPrefs.GetInt("brickcountp2") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp2"));
-        if (PlayerPrefs.GetInt("brickcountp3") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp3"));
-        if (PlayerPrefs.GetInt("brickcountp4") > PlayerPrefs.GetInt("highcount")) setNewHighCount(PlayerPrefs.GetInt("brickcountp4"));
+        if (PlayerPrefs.GetString("mode") == "ModeArcade") {
+            if (PlayerPrefs.GetInt("scorep1") > PlayerPrefs.GetInt("arcadehighscore")) setNewRecord("arcadehighscore", PlayerPrefs.GetInt("scorep1"), isNewHighScore);
+            if (PlayerPrefs.GetInt("scorep2") > PlayerPrefs.GetInt("arcadehighscore")) setNewRecord("arcadehighscore", PlayerPrefs.GetInt("scorep2"), isNewHighScore);
+            if (PlayerPrefs.GetInt("scorep3") > PlayerPrefs.GetInt("arcadehighscore")) setNewRecord("arcadehighscore", PlayerPrefs.GetInt("scorep3"), isNewHighScore);
+            if (PlayerPrefs.GetInt("scorep4") > PlayerPrefs.GetInt("arcadehighscore")) setNewRecord("arcadehighscore", PlayerPrefs.GetInt("scorep4"), isNewHighScore);
+            if (PlayerPrefs.GetInt("brickcountp1") > PlayerPrefs.GetInt("arcadehighcount")) setNewRecord("arcadehighcount", PlayerPrefs.GetInt("brickcountp1"), isNewHighCount);
+            if (PlayerPrefs.GetInt("brickcountp2") > PlayerPrefs.GetInt("arcadehighcount")) setNewRecord("arcadehighcount", PlayerPrefs.GetInt("brickcountp2"), isNewHighCount);
+            if (PlayerPrefs.GetInt("brickcountp3") > PlayerPrefs.GetInt("arcadehighcount")) setNewRecord("arcadehighcount", PlayerPrefs.GetInt("brickcountp3"), isNewHighCount);
+            if (PlayerPrefs.GetInt("brickcountp4") > PlayerPrefs.GetInt("arcadehighcount")) setNewRecord("arcadehighcount", PlayerPrefs.GetInt("brickcountp4"), isNewHighCount);
 
-        highScoreText.gameObject.GetComponent<Text>().text = "High-Score: " + PlayerPrefs.GetInt("highscore") + "  -  " + PlayerPrefs.GetInt("highcount");
+            highScoreText.gameObject.GetComponent<Text>().text = "High-Score: " + PlayerPrefs.GetInt("arcadehighscore") + "  -  " + PlayerPrefs.GetInt("arcadehighcount");
+        }
+        else if (PlayerPrefs.GetString("mode") == "ModeTower") {
+            if (PlayerPrefs.GetInt("scorep1") > PlayerPrefs.GetInt("towerhighscore")) setNewRecord("towerhighscore", PlayerPrefs.GetInt("scorep1"), isNewHighScore);
+            if (PlayerPrefs.GetInt("scorep2") > PlayerPrefs.GetInt("towerhighscore")) setNewRecord("towerhighscore", PlayerPrefs.GetInt("scorep2"), isNewHighScore);
+            if (PlayerPrefs.GetInt("scorep3") > PlayerPrefs.GetInt("towerhighscore")) setNewRecord("towerhighscore", PlayerPrefs.GetInt("scorep3"), isNewHighScore);
+            if (PlayerPrefs.GetInt("scorep4") > PlayerPrefs.GetInt("towerhighscore")) setNewRecord("towerhighscore", PlayerPrefs.GetInt("scorep4"), isNewHighScore);
+            if (PlayerPrefs.GetInt("brickcountp1") > PlayerPrefs.GetInt("towerhighcount")) setNewRecord("towerhighcount", PlayerPrefs.GetInt("brickcountp1"), isNewHighCount);
+            if (PlayerPrefs.GetInt("brickcountp2") > PlayerPrefs.GetInt("towerhighcount")) setNewRecord("towerhighcount", PlayerPrefs.GetInt("brickcountp2"), isNewHighCount);
+            if (PlayerPrefs.GetInt("brickcountp3") > PlayerPrefs.GetInt("towerhighcount")) setNewRecord("towerhighcount", PlayerPrefs.GetInt("brickcountp3"), isNewHighCount);
+            if (PlayerPrefs.GetInt("brickcountp4") > PlayerPrefs.GetInt("towerhighcount")) setNewRecord("towerhighcount", PlayerPrefs.GetInt("brickcountp4"), isNewHighCount);
+
+            highScoreText.gameObject.GetComponent<Text>().text = "High-Score: " + PlayerPrefs.GetInt("towerhighscore") + "  -  " + PlayerPrefs.GetInt("towerhighcount");
+        }
         if (!isNewHighScore || !isNewHighCount) highScoreIndicator.SetActive(false);
     }
 
@@ -73,15 +87,14 @@ public class UtilityGameOverController : MonoBehaviour
         PlayerPrefs.SetInt("brickcountp2", 0);
         PlayerPrefs.SetInt("brickcountp3", 0);
         PlayerPrefs.SetInt("brickcountp4", 0);
+        PlayerPrefs.SetInt("winnerp1", 0);
+        PlayerPrefs.SetInt("winnerp2", 0);
+        PlayerPrefs.SetInt("winnerp3", 0);
+        PlayerPrefs.SetInt("winnerp4", 0);
     }
 
-    void setNewHighScore(int newScore) {
-        isNewHighScore = true;
-        PlayerPrefs.SetInt("highscore", newScore);
-    }
-
-    void setNewHighCount(int newhighCount) {
-        isNewHighCount = true;
-        PlayerPrefs.SetInt("highcount", newhighCount);
+    void setNewRecord(string prefKey, int newScore, bool indicator) {
+        indicator = true;
+        PlayerPrefs.SetInt(prefKey, newScore);
     }
 }

@@ -6,10 +6,9 @@ public class TowerBrickP2 : MonoBehaviour
 {
     public bool isRotationAllowed = true;
     public bool isRotationLimited = false;
-    public int moveVal = 1;
-    public int rotateVal = 90;
-    private float fallSpeed = 1;
-    private float fallTime = 0;
+    public float moveVal = 0.25f;
+    public float rotateVal = 90;
+    public bool released = false;
 
     void Awake() {
         string player = this.gameObject.transform.parent.name;
@@ -17,63 +16,42 @@ public class TowerBrickP2 : MonoBehaviour
     }
 
     void Update() {
+        if (FindObjectOfType<TowerPlatformP2>().isGameOver) Destroy(this.gameObject);
         checkInput();
-        fallDown();
-        updateFallSpeed();
     }
 
     void checkInput() {
-        if (Input.GetKeyDown(KeyCode.J) && isValidMove(-moveVal, 0, 0)) move(-moveVal, 0);
-        if (Input.GetKeyDown(KeyCode.L) && isValidMove(moveVal, 0, 0)) move(moveVal, 0);
-        if (isRotationAllowed && Input.GetKeyDown(KeyCode.I) && isValidMove(0, 0, rotateVal)) rotate(rotateVal, true);
+        if (Input.GetKeyDown(KeyCode.J) && isValidMove(-moveVal, 0)) move(-moveVal, 0);
+        if (Input.GetKeyDown(KeyCode.L) && isValidMove(moveVal, 0)) move(moveVal, 0);
+        if (isRotationAllowed && Input.GetKeyDown(KeyCode.I)) rotate(rotateVal);
+        if (Input.GetKeyDown(KeyCode.K) && isValidMove(0, -moveVal)) move(0, -moveVal);
+        if (Input.GetKeyDown(KeyCode.U) && isNotInSpawn()) release();
     }
 
-    void fallDown() {
-        if (Time.time - fallTime >= fallSpeed) {
-            if (isValidMove(0, -moveVal, 0)) {
-                move(0, -moveVal);
-                fallTime = Time.time;
-            } else {
-                enabled = false;
-                FindObjectOfType<TowerPlatformP2>().updateRows();
-                FindObjectOfType<TowerPlatformP2>().checkGameOver(this.gameObject);
-                if (!FindObjectOfType<TowerPlatformP2>().isGameOver) {
-                    PlayerPrefs.SetInt("scorep2", PlayerPrefs.GetInt("scorep2") + 10);
-                    PlayerPrefs.SetInt("brickcountp2", PlayerPrefs.GetInt("brickcountp2") + 1);
-                    this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-                    FindObjectOfType<TowerPlatformP2>().instantiateNextBrick();
-                }
-                else Destroy(this.gameObject);
-            }
-        }
-    }
+    void move(float x, float y) => this.gameObject.transform.position += new Vector3(x, y, 0);
 
-    void updateFallSpeed() {
-        fallSpeed = FindObjectOfType<UtilityFallSpeedManager>().fallSpeed;
-    }
-
-    void move(int x, int y) {
-        this.gameObject.transform.position += new Vector3(x, y, 0);
-        FindObjectOfType<TowerPlatformP2>().updateGrid(this.gameObject);
-    }
-
-    void rotate(int z, bool isActuallyARotation) {
+    void rotate(float z) {
         if (isRotationLimited && this.gameObject.transform.rotation.eulerAngles.z >= rotateVal) this.gameObject.transform.Rotate(0, 0, -z);
         else this.gameObject.transform.Rotate(0, 0, z);
-        if (isActuallyARotation) FindObjectOfType<TowerPlatformP2>().updateGrid(this.gameObject);                                                  // this is needed because the brick is also rotated when validating a move
     }
 
-    bool isValidMove(int moveX, int moveY, int rotateZ) {
-        bool isValid = true;
-        Quaternion currentRotation = this.gameObject.transform.rotation;                                                                            // save current rotation
-        rotate(rotateZ, false);                                                                                                                     // rotate the brick into its next form
-        foreach (Transform cube in this.gameObject.transform) {
-            Vector2 attemptedPos = new Vector2((int)Mathf.Round(cube.position.x + moveX), (int)Mathf.Round(cube.position.y + moveY));               // move each cube of the brick into their next position
-            if (FindObjectOfType<TowerPlatformP2>().isInsideGrid(attemptedPos) == false) isValid = false;                                              // if a cube is out of bounds then the move is invalid
-            else if (FindObjectOfType<TowerPlatformP2>().getTransformAtGridPosition(attemptedPos) != null)                                             // also, if it's in bounds but there is already a brick on that spot
-                if (FindObjectOfType<TowerPlatformP2>().getTransformAtGridPosition(attemptedPos).parent != this.gameObject.transform) isValid = false; // and if that brick is not the one we want to move, then the move is also invalid
-        }
-        this.gameObject.transform.rotation = currentRotation;                                                                                       // reset the rotation
-        return isValid;
+    void release() {
+        PlayerPrefs.SetInt("scorep2", PlayerPrefs.GetInt("scorep2") + 10 + (int)this.gameObject.transform.position.y);
+        PlayerPrefs.SetInt("brickcountp2", PlayerPrefs.GetInt("brickcountp2") + 1);
+        this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        FindObjectOfType<TowerPlatformP2>().instantiateNextBrick();
+        released = true;
+        enabled = false;
+    }
+
+    bool isValidMove(float x, float y) {
+        Vector3 pos = this.gameObject.transform.position + new Vector3(x, y, 0);
+        if (FindObjectOfType<TowerPlatformP2>().isInsideBounds(pos)) return true;
+        return false;
+    }
+
+    bool isNotInSpawn() {
+        if (this.gameObject.transform.position.y > 33 && this.gameObject.transform.position.x < 14 && this.gameObject.transform.position.x > 6) return false;
+        return true;
     }
 }
