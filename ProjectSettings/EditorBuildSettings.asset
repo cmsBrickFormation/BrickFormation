@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3f276554f7e67264f9842783bd440280
   - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 41857ac8017bbfa46973d1834930c0c5
+  - enabled: 1
     path: Assets/Scenes/ModeArcade.unity
     guid: 69b365a0ba218bb4a87b09b6de64ba4c
   - enabled: 0
