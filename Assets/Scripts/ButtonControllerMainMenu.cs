@@ -21,6 +21,8 @@ public class ButtonControllerMainMenu : MonoBehaviour
         toggleSelection();
     }
 
+    public void onHowToClick() => FindObjectOfType<UtilitySceneManager>().loadScene("HowToPlay");
+
     public void onQuitClick() => Application.Quit();
 
     public void onCancelClick() {
