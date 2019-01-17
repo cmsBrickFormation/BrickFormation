@@ -26,6 +26,7 @@ public class ArcadeBrickP1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && isValidMove(-moveVal, 0, 0)) move(-moveVal, 0);
         if (Input.GetKeyDown(KeyCode.D) && isValidMove(moveVal, 0, 0)) move(moveVal, 0);
         if (isRotationAllowed && Input.GetKeyDown(KeyCode.W) && isValidMove(0, 0, rotateVal)) rotate(rotateVal, true);
+        if (Input.GetKeyDown(KeyCode.S) && isValidMove(0, -moveVal, 0)) move(0, -moveVal);
     }
 
     void fallDown() {
