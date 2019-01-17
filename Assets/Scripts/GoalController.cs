@@ -21,7 +21,7 @@ public class GoalController : MonoBehaviour
         if (timerActive) timer--;
         if (timer <= 0) {
             PlayerPrefs.SetInt(prefKeyWinner, 1);
-            PlayerPrefs.SetInt(prefKeyScore, PlayerPrefs.GetInt(prefKeyScore) + 500);
+            PlayerPrefs.SetInt(prefKeyScore, PlayerPrefs.GetInt(prefKeyScore) + 2500);
             enabled = false;
         }
     }

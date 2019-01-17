@@ -1,7 +1,10 @@
 # BrickFormation
 A students' project conducted at FH Joanneum Graz
 
+
 Team:
  - HARING Martin
  - CÖLESTIN Carina
- - TestTestCariCari
+
+ 
+Requires Unity version 2018.3.0f2

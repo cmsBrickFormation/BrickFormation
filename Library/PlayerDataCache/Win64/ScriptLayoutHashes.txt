@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/Carina/Desktop/BrickFormation Bilder/Brick Formation.exe
+C:/Users/Carina/Desktop/BrickFormation Bilder/Brick Formation_.exe
 SceneListBegin?
 Assets/Scenes/Init.unity
 Assets/Scenes/SplashscreenFH.unity
@@ -195,6 +195,7 @@ ae91c545dea6ac849dd81c4b660c68ca Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 ec0081dd6e4e9bc01df61d1322da30a2 Assembly-CSharp.dll:.TowerBrickP3
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MenuManager
 4f7950b43abe8d1f6df5e24cfeaf2bcc Assembly-CSharp.dll:.GoalController
 e9d5fb15fb73e111088ff79a416a37ca Assembly-CSharp.dll:.UtilityRNG
 c94d93ead5296a7e4158bdf7bd393a01 Assembly-CSharp.dll:.TowerPlatformP3
@@ -229,6 +230,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
+c316b73273806bcef36b861ee4a39a2e Assembly-CSharp.dll:.MoveImage
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.UtilitySceneManager
 c94d93ead5296a7e4158bdf7bd393a01 Assembly-CSharp.dll:.TowerPlatformP2
 08ca4cc8a1bd5cafb5abf967f4f4c03f Assembly-CSharp.dll:.UtilityBrickPreviewP4
@@ -345,5 +347,3 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MenuManager
-c316b73273806bcef36b861ee4a39a2e Assembly-CSharp.dll:.MoveImage

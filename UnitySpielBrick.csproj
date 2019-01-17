@@ -325,7 +325,9 @@
     <Compile Include="Assets\Scripts\GoalController.cs" />
     <Compile Include="Assets\Scripts\Init.cs" />
     <Compile Include="Assets\Scripts\LivesController.cs" />
+    <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\ModeInit.cs" />
+    <Compile Include="Assets\Scripts\MoveImage.cs" />
     <Compile Include="Assets\Scripts\PlayerInit.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlFH.cs" />
