@@ -17,6 +17,6 @@ public class SplashscreenControlTeam : MonoBehaviour
     }
 
     void moveLogo(GameObject logo) {
-        if (timer < 140) logo.GetComponent<RectTransform>().anchoredPosition = new Vector2(logo.GetComponent<RectTransform>().anchoredPosition.x, logo.GetComponent<RectTransform>().anchoredPosition.y - 5);
+        if (timer < 140) logo.GetComponent<RectTransform>().anchoredPosition = new Vector2(logo.GetComponent<RectTransform>().anchoredPosition.x, logo.GetComponent<RectTransform>().anchoredPosition.y - 4);
     }
 }

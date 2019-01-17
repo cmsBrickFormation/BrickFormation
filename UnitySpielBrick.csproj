@@ -310,16 +310,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ArcadeBrickInstantiater.cs" />
-    <Compile Include="Assets\Scripts\ArcadeInit.cs" />
-    <Compile Include="Assets\Scripts\BehaviorBrick.cs" />
-    <Compile Include="Assets\Scripts\BehaviorGrid.cs" />
+    <Compile Include="Assets\Scripts\ArcadeBrickP1.cs" />
+    <Compile Include="Assets\Scripts\ArcadeBrickP2.cs" />
+    <Compile Include="Assets\Scripts\ArcadeBrickP3.cs" />
+    <Compile Include="Assets\Scripts\ArcadeBrickP4.cs" />
+    <Compile Include="Assets\Scripts\ArcadeGridP1.cs" />
+    <Compile Include="Assets\Scripts\ArcadeGridP2.cs" />
+    <Compile Include="Assets\Scripts\ArcadeGridP3.cs" />
+    <Compile Include="Assets\Scripts\ArcadeGridP4.cs" />
+    <Compile Include="Assets\Scripts\ArcadePlayerCharController.cs" />
+    <Compile Include="Assets\Scripts\ButtonControllerCharWindow.cs" />
     <Compile Include="Assets\Scripts\ButtonControllerGameOver.cs" />
     <Compile Include="Assets\Scripts\ButtonControllerMainMenu.cs" />
+    <Compile Include="Assets\Scripts\GoalController.cs" />
     <Compile Include="Assets\Scripts\Init.cs" />
+    <Compile Include="Assets\Scripts\LivesController.cs" />
+    <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\ModeInit.cs" />
+    <Compile Include="Assets\Scripts\MoveImage.cs" />
+    <Compile Include="Assets\Scripts\PlayerInit.cs" />
+    <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlFH.cs" />
     <Compile Include="Assets\Scripts\SplashscreenControlTeam.cs" />
+    <Compile Include="Assets\Scripts\TowerBrickP1.cs" />
+    <Compile Include="Assets\Scripts\TowerBrickP2.cs" />
+    <Compile Include="Assets\Scripts\TowerBrickP3.cs" />
+    <Compile Include="Assets\Scripts\TowerBrickP4.cs" />
+    <Compile Include="Assets\Scripts\TowerPlatformP1.cs" />
+    <Compile Include="Assets\Scripts\TowerPlatformP2.cs" />
+    <Compile Include="Assets\Scripts\TowerPlatformP3.cs" />
+    <Compile Include="Assets\Scripts\TowerPlatformP4.cs" />
+    <Compile Include="Assets\Scripts\TowerPlayerCharController.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickCatcher.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP1.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP2.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP3.cs" />
+    <Compile Include="Assets\Scripts\UtilityBrickPreviewP4.cs" />
+    <Compile Include="Assets\Scripts\UtilityCharWindowActivator.cs" />
+    <Compile Include="Assets\Scripts\UtilityEscapeRope.cs" />
+    <Compile Include="Assets\Scripts\UtilityFallSpeedManager.cs" />
+    <Compile Include="Assets\Scripts\UtilityGameOverController.cs" />
     <Compile Include="Assets\Scripts\UtilityGameOverObserver.cs" />
+    <Compile Include="Assets\Scripts\UtilityPlayerActivator.cs" />
+    <Compile Include="Assets\Scripts\UtilityPlayerIdentifier.cs" />
+    <Compile Include="Assets\Scripts\UtilityReadyChecker.cs" />
+    <Compile Include="Assets\Scripts\UtilityRNG.cs" />
     <Compile Include="Assets\Scripts\UtilitySceneManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
