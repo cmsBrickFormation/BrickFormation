@@ -75,7 +75,7 @@ public class UtilityGameOverController : MonoBehaviour
 
             highScoreText.gameObject.GetComponent<Text>().text = "High-Score: " + PlayerPrefs.GetInt("towerhighscore") + "  -  " + PlayerPrefs.GetInt("towerhighcount");
         }
-        if (!isNewHighScore || !isNewHighCount) highScoreIndicator.SetActive(false);
+        if (!isNewHighScore && !isNewHighCount) highScoreIndicator.SetActive(false);
     }
 
     void Start() {
